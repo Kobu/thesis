@@ -45,8 +45,8 @@ Next.js is an open source React framework developed by Vercel. Its aim is to pro
 Next.js takes care of SSR - by marking components with a 'use client' or 'use server' directive, the developer decide whether it is a server or client side rendered component. SSG is also taken care of as Next
 automatically recognizes webpages, which do not channge over time, and hence can be marked as static and pre-rendered. With the introduction of `app router`, routing is as simple as it gets. App router allows
 the developer to define routes based on file system structure. The root of the `app` folder is treated as the root url. Every subdirectory which includes `page.js` or `page.ts` is considered as routable
-![app-router.png](muni/thesis/images//app-router.png)
-source: https://nextjs.org/docs/app/building-your-application/routing/defining-routes
+![app-router.png](muni/thesis/images/app-router.png)
+source: https:/nextjs.org/docs/app/building-your-application/routing/defining-routes
 in the above case routes /, /dashboard, /dashbouard/settings are present, thanks to the presence of `page.js` in corresponding directories. This helps tremendoously and enables the developer to focus on more important
 aspects of a website
 
@@ -76,7 +76,7 @@ component for example, we should be able to use this Button anywhere on our webp
 
 Not reinventing the wheel is even more fundamental when it comes to frontend components. A Button is too trivial of an example, but lets imagine an Accordion. Accordion is a component
 with multiple entries, which can recursively nest-in.
-![accordion.gif](muni/thesis/images//accordion.gif)
+![accordion.gif](muni/thesis/images/accordion.gif)
 Implementing one is not an impossible task, however it is good idea to delegate this work to specialized frontend developers. These developers usually create so-called component libraries.
 These libraries are a collection of most widely used, styled or unstyled components, that every website needs, usually installed as a package dependency. Example of such components are buttons, links, select menu, dropdown menu, sliders etc.
 Usage of a library is highly recommended as it saves time by preveneting the developer the reinvent the wheel, and probably do a poorer job while doing so.
@@ -87,13 +87,13 @@ Not using a component library is definitely an option. It offers higher level of
 A very popular component library based on Google's Material Design. It is visually consitent, while still providing ways to configure and style the components. MaterialUI is a very mature
 component library with over 50 components, that can be used in development of enterprise level applications and hobby projects alike. It is installed as a package dependency and might have some 
 performence consequences, as some of the components are heavy-weight.
-![material-ui.png](muni/thesis/images//material-ui.png)
+![material-ui.png](muni/thesis/images/material-ui.png)
 ##### Shadcn/ui
 Shadcn/ui is a new, quickly rising component library. Compared to other popular alternatives, it is not installed as a package dependency. Rather the developer picks which components should be installed
 and the code of these components gets copied to the project. This means the developer is the owner of these components and can bend the code to their will. While this assures extremely high customizablity,
 it also allows the developer to just stick with the defaults, as shadcn/ui is production ready as is. Having copied only what is desired, this has no additional performence overhead. Shadcn/ui also
 offers styling with TailwindCSS trough the use of `className` props. This styling does not break the components, it only extends them.
- ![shadcn.png](muni/thesis/images//shadcn.png)
+ ![shadcn.png](muni/thesis/images/shadcn.png)
 Shadcn offers around 40 well-made components and is slowly adding more with charts being the newest addion shadcn is the clear winner for the components library.
 
 #### CSS
