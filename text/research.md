@@ -28,7 +28,7 @@ sooner the user feels like they are experiecing the webpage. Google recognizes L
 INP is a metric that focuses on the responsiveness of the webpage. It measures the time the webpage takes to respond to user intercations. It is recommended to have INP lesser than 200 miliseconds.
 Exceeding this value may not only cause unpleasant user experience, but could straigh up leave to absolute confusion on the user's end. When an user clicks a button, they expect almost immediate feedback
 , this can be achieved by using loaders and spinners, to convey the fact that something, in the background is happening.
-![spinner.gif](assets/imgs/spinner.gif)
+![spinner.gif](muni/thesis/images//spinner.gif)
 Example of an unpleasant experience would be showing a popup dialog one second
 after the user has clicked a button, without any loaders or spinners. This causes confusion and bad user experience. Moreover the failure to show that something is happening on the background may
 lead to user spamming the button, this can have severe consequences on the integrity of the data the user is modifying.
@@ -37,7 +37,7 @@ CLS quantifies visual stability by measuring unexpected layout shifts of visible
 the elements on the webpage shift unexpectedly. Having elements shifted under user's hands not only confuses the user, but may lead to accidental clicks on incorrect elements. The lower the CLS, the better.
 General recommendation for CLS is values less than 0.1. As with LPC, spinner or skeletons should be used to prevent high values of CLS. Primary cause of CLS is rendering some elements only after
 a fetch call is resloved. This causes the webpage to load, and then shift to account for the element that depends on the fetched data.
-![cls.gif](assets/imgs/cls.gif)
+![cls.gif](muni/thesis/images//cls.gif)
 
 ---
 Moreover, there are more web performance metrics we will be interested in:
@@ -86,7 +86,7 @@ Toggl provides no self-host options, as it is entirely cloud based.
 Where Toggl really shines is the integrations. It allows integrations not only with Google and Outlook calendars, but also with additional 100+ application, such as Evernote, Github, GitLab, Notion and much more.
 
 Toggl has a lot of features, some of them are crucial, some are not. This directly causes the UI to be more cluttered than is most likely desired
-![toggl.png](assets/imgs/toggl.png)
+![toggl.png](muni/thesis/images//toggl.png)
 
 Pricing on toggle is rather generous, the free tier provides regular user with all the features one might desire. 
 
@@ -106,7 +106,7 @@ Traggo provides no cloud-hosted option, so the only way to run this application 
 Integration is the achilles heel of Traggo, there are basically no built-in intergrations that are supported out of the box.
 - UI/UX
 The UI/UX delivers what it promises. It is simple, intuitive and visually pleasing.
-![traggo.png](assets/imgs/traggo.png)
+![traggo.png](muni/thesis/images//traggo.png)
 - feature-bloat
 Traggo focuses on one thing and one thing only - track time. The whole app is centered around this goal and it does not provide any other features. 
 - pricing
