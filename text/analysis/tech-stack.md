@@ -134,3 +134,61 @@ Example:
 ```
 As we can see by the provided examples, Tailwind offers more consise way of styling components and is generally favoured by developers, compared to plain CSS. Since our 
 component library of choise also uses Tailwind, I have decided to use it in this work.
+
+
+### Backend
+Choosing backend technology stack is just as important as frontend, if not more. Solid backend tech stack will enable the developer to write consise, yet expressive code for handling
+API requests and communicating with a database. 
+
+#### Database
+Database is the a integral component in most web application. This fact alone makes a selection of good database crucial. I will first shortly explain differences between SQL and No-SQL database,
+based on the differences pick one that fits our usecase the most, and then compare different database systems of given type.
+
+##### SQL vs No-SQL
+The choice between SQL, often refered to as a relational databases, and NoSQL largely depends on the nature of the data, the application requirements and scaling needs.
+SQL stores data in structured tables with pre-defined schema. This rigidity of schemas enforces data integrity and consitency. On the other hand, No-SQL is a catch-all term for all
+databases that are not SQL. This includes, but is not limited to, document, key-value and graph databases. Document databases are the most common alternative for SQL databases so I will
+mainly compare those. Document databases store date in document-like format. This format can be tought of json files without any predefined schema, so called schema-less databases. This is beneficial for
+projects that must deal with frequent changes to the underlying data schemas, which the schemaless approach of document databases certainly handle well.
+
+Based on the requirements stated in previous chapters, we can safely create a pre-defined schema, and thus it is logical to continue with an SQL database. Moreover we do not any added
+flexibility of document databases, rather the data consitency and integrity provided by relational databases.
+
+In the following section I will compare the most popular SQL database systems, and pick one based on our needs.
+##### SQLite
+SQLite is an open source, lightweight, embedded relation database that is stored in a single file. It is ideal for mobile apps for keeping the data within device. However due to the design, it lacks
+scalability and advanced features such as concurrency and multi-user access. Where it shines is the simple setup with zero configuration and small overhead. For these reeasons SQLite is 
+often used in development environments.
+##### Oracle DB
+Oracle DB is a closed-source, enteprise-level, commercial database system. It is developer by the Oracle Corporation, which also provides good customer support. Oracle DB is full of most advanced features
+that enteprise-level applications require, however for our purposes this database might be too complex with too much overhead.
+##### Postgres
+Postgres is an open source, advanced database which offers high reliability and excellent performance. It has a strong community behind it, developing features, fixing bugs and creating
+drivers for new languages.
+
+
+
+| Database  | Self Host | Configuration  | Flexibility | Features |
+| --------- | --------- | -------------- | ----------- | -------- |
+| SQLite    | Yes       | Simple to None | Small       | Basic    |
+| Oracle DB | No        | Complex        | Good        | Advanced |
+| Postgres  | Yes       | Simple         | Good        | Advanced |
+
+Based on the comparisons above, we will use Postgres as our database.
+
+#### Language and libraries
+In order to achieve excellent perfomance, we will use the Rust programming language. Rust is one of the newer languages
+providing  zero-cost abstractions, awesome tooling, and, most imporantly, memory safety without compromising on performance. 
+This is achieved by so called borrow checker, explanation of the borrow checker is, however, out of scope of this work.
+
+Second step would be to choose database driver. We know we will use Postgres as our database, but we need a library, driver,
+to interact with the database inside our codebase. There are several options when it comes to rust. 
+TODO: ORM vs QueryBuilder
+We will thefore use SQLx, which is an extremely thin wrapper around our SQL queries. This achieves minimal overhead and 
+no perfomance degradation.
+
+HTTP Server
+There are two popular options in rust, `Actix` and `Axum`. The differences are minimal, both provide excellent developer experience,
+without compomising on perfomance. The `Axum` server is maintained by the same team that develops and maintains the
+tokio asynchronous runtime. This ensures perfect harmony between the runtime and the server itself. Due to minimal differences 
+beteween the server libraries, this is the only reason while we will go with `Axum`.
